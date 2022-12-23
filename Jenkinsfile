@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t mywebapp:latest .'
+                script{
+                    sh 'docker build -t mywebapp:latest .'
+                }
             }
         }
         stage('Test') {
