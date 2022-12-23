@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building..'
+                sh 'docker build -t mywebapp:${env.BUILD_NUMBER}'
             }
         }
         stage('Test') {
