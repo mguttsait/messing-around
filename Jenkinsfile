@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t mywebapp:${env.BUILD_NUMBER}'
+                sh 'docker build -t mywebapp:latest .'
             }
         }
         stage('Test') {
